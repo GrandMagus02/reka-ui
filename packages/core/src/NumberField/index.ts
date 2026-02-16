@@ -2,3 +2,5 @@ export { default as NumberFieldDecrement, type NumberFieldDecrementProps } from 
 export { default as NumberFieldIncrement, type NumberFieldIncrementProps } from './NumberFieldIncrement.vue'
 export { default as NumberFieldInput, type NumberFieldInputProps } from './NumberFieldInput.vue'
 export { injectNumberFieldRootContext, default as NumberFieldRoot, type NumberFieldRootEmits, type NumberFieldRootProps } from './NumberFieldRoot.vue'
+export { injectNumberFieldScrubAreaContext, default as NumberFieldScrubArea, type NumberFieldScrubAreaProps } from './NumberFieldScrubArea.vue'
+export { default as NumberFieldScrubAreaCursor, type NumberFieldScrubAreaCursorProps } from './NumberFieldScrubAreaCursor.vue'

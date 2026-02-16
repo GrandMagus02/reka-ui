@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Icon } from '@iconify/vue'
 import { ref } from 'vue'
-import { NumberFieldDecrement, NumberFieldIncrement, NumberFieldInput, NumberFieldRoot } from '..'
+import { NumberFieldDecrement, NumberFieldIncrement, NumberFieldInput, NumberFieldRoot, NumberFieldScrubArea, NumberFieldScrubAreaCursor } from '..'
 
 const value = ref(5)
 </script>
@@ -198,6 +198,75 @@ const value = ref(5)
         <NumberFieldIncrement class="p-2 disabled:opacity-20">
           <Icon icon="radix-icons:plus" />
         </NumberFieldIncrement>
+      </NumberFieldRoot>
+    </Variant>
+
+    <Variant title="Scrub Area (Horizontal)">
+      <NumberFieldRoot
+        :default-value="50"
+        class="text-sm flex items-center text-white"
+      >
+        <NumberFieldScrubArea class="p-2 cursor-ew-resize select-none">
+          <label>Value</label>
+          <NumberFieldScrubAreaCursor>
+            <Icon
+              icon="radix-icons:width"
+              class="size-6 text-white"
+            />
+          </NumberFieldScrubAreaCursor>
+        </NumberFieldScrubArea>
+        <NumberFieldInput class="bg-blackA7 border border-blackA9 rounded-md w-20 tabular-nums focus:outline-0 p-1" />
+      </NumberFieldRoot>
+    </Variant>
+
+    <Variant title="Scrub Area (Vertical)">
+      <NumberFieldRoot
+        :default-value="50"
+        class="text-sm flex items-center text-white"
+      >
+        <NumberFieldScrubArea
+          direction="vertical"
+          class="p-2 cursor-ns-resize select-none"
+        >
+          <label>Value</label>
+          <NumberFieldScrubAreaCursor>
+            <Icon icon="radix-icons:cursor-arrow" />
+          </NumberFieldScrubAreaCursor>
+        </NumberFieldScrubArea>
+        <NumberFieldInput class="bg-blackA7 border border-blackA9 rounded-md w-20 tabular-nums focus:outline-0 p-1" />
+      </NumberFieldRoot>
+    </Variant>
+
+    <Variant title="Scrub Area (Disabled)">
+      <NumberFieldRoot
+        :default-value="50"
+        disabled
+        class="text-sm flex items-center text-white"
+      >
+        <NumberFieldScrubArea class="p-2 cursor-ew-resize select-none disabled:opacity-20">
+          <label>Value</label>
+          <NumberFieldScrubAreaCursor>
+            <Icon icon="radix-icons:cursor-arrow" />
+          </NumberFieldScrubAreaCursor>
+        </NumberFieldScrubArea>
+        <NumberFieldInput class="bg-blackA7 border border-blackA9 rounded-md w-20 tabular-nums focus:outline-0 p-1" />
+      </NumberFieldRoot>
+    </Variant>
+
+    <Variant title="Scrub Area with Min/Max">
+      <NumberFieldRoot
+        :default-value="50"
+        :min="0"
+        :max="100"
+        class="text-sm flex items-center text-white"
+      >
+        <NumberFieldScrubArea class="p-2 cursor-ew-resize select-none">
+          <label>Opacity</label>
+          <NumberFieldScrubAreaCursor>
+            <Icon icon="radix-icons:cursor-arrow" />
+          </NumberFieldScrubAreaCursor>
+        </NumberFieldScrubArea>
+        <NumberFieldInput class="bg-blackA7 border border-blackA9 rounded-md w-20 tabular-nums focus:outline-0 p-1" />
       </NumberFieldRoot>
     </Variant>
   </Story>

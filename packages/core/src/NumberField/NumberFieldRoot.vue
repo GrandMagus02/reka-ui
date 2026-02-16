@@ -59,6 +59,7 @@ interface NumberFieldRootContext {
   isDecreaseDisabled: Ref<boolean>
   isIncreaseDisabled: Ref<boolean>
   id: Ref<string | undefined>
+  isScrubbing: Ref<boolean>
 }
 
 export const [injectNumberFieldRootContext, provideNumberFieldRootContext] = createContext<NumberFieldRootContext>('NumberFieldRoot')
@@ -93,6 +94,7 @@ const { primitiveElement, currentElement } = usePrimitiveElement()
 const locale = useLocale(propLocale)
 const isFormControl = useFormControl(currentElement)
 const inputEl = ref<HTMLInputElement>()
+const isScrubbing = ref(false)
 
 const isDecreaseDisabled = computed(() => (
   !isNullish(modelValue.value) && (
@@ -216,6 +218,7 @@ provideNumberFieldRootContext({
   isDecreaseDisabled,
   isIncreaseDisabled,
   id,
+  isScrubbing,
 })
 </script>
 
